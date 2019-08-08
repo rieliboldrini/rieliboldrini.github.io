@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300&display=swap');
+
+@font-face {
+    font-family: 'Fixture Expanded';
+    src: url('../fonts/Fixture-ExpandedLight.woff2') format('woff2'),
+        url('../fonts/Fixture-ExpandedLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fixture Ultra';
+    src: url('../fonts/FixtureUltra-Black.woff2') format('woff2'),
+        url('../fonts/FixtureUltra-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@mixin fixture-expanded($size: false, $colour: false, $lh: false, $uppercase: false) {
+  font-family: 'Fixture Expanded', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $lh { line-height: $lh; }
+  @if $uppercase { text-transform: $uppercase; }
+}
+
+@mixin fixture-ultra($size: false, $colour: false, $lh: false, $uppercase: false) {
+  font-family: 'Fixture Ultra', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $lh { line-height: $lh; }
+  @if $uppercase { text-transform: $uppercase; } 
+}
+
+@mixin rubik($size: false, $colour: false, $lh: false, $uppercase: false) {
+  font-family: 'Rubik', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $lh { line-height: $lh; }
+  @if $uppercase { text-transform: $uppercase; } 
+}

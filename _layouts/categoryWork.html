@@ -1,0 +1,67 @@
+---
+layout: page
+---
+{% include header.html %}
+<section id="work">
+  <h3>Posts related to: {{ page.title }}</h3>
+</section>
+
+{% unless page.content == '' %}
+  <p>{{ page.content }}</p>
+{% endunless %}
+
+{% unless site.categories.[page.category] | size > 0 %}
+  <p>No posts in this category at this time.</p>
+{% endunless %}
+
+{% for post in site.categories.[page.category] %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">
+        Posted by 
+        {% if post.author %}
+        {{ post.author }}
+        {% else %}
+        {{ site.title }}
+        {% endif %} 
+        on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
+
+    <section id="work">
+        <div class="row">
+            <div class="col-12">
+                <h2>More Work</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    {% assign cat_blog = site.categories.blog %}
+                    {% for post in cat_blog %}
+                    <li class="col-4 card">
+                        <a href="{{ post.url }}">
+                            <div class="post-image" style="background-image: url('{{post.image | prepend: site.baseurl}}');"></div>
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.description }}</p>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+{% include footer.html %}

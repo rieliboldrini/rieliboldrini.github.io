@@ -1,0 +1,57 @@
+{% include header.html %}
+	</section>
+
+	<div class="post-background">
+		<div class="container">
+			<div class="row">
+				<div class="post-content centered-content col-10">
+					<div class="post-head">
+						<h1>{{ page.title }}</h1>
+						<p class="description">{{ page.description }}</p>
+						<div class="tags">
+							<p>{{ page.year }}</p>
+							<p>{{ page.brand }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-banner centered-content" style="background-image: url('{{page.image | prepend: site.baseurl}}');"></div>
+		<div class="container">
+			<div class="row">
+				<div class="post-content centered-content col-10">
+					<div class="post-body">
+						{{ content }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section id="work">
+		<div class="row">
+			<div class="col-12">
+				<h2>More Work</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<ul>
+					{% assign cat_blog = site.categories.blog %}
+					{% for post in cat_blog %}
+					<li class="col-4 card">
+						<a href="{{ post.url }}">
+							<div class="post-image" style="background-image: url('{{post.image | prepend: site.baseurl}}');"></div>
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.description }}</p>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+{% include footer.html %}
