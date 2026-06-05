@@ -1,0 +1,45 @@
+/* =========================================================================
+   RIELI DESIGN SYSTEM — fonts.css
+   Self-contained @font-face declarations. Ships the real font files
+   (latin subset) so any project works OFFLINE with no CDN dependency.
+
+   TO USE IN ANOTHER PROJECT — copy THREE things, keeping them siblings:
+     1. fonts.css            (this file)
+     2. fonts/               (the .woff2 files it points at)
+     3. colors_and_type.css  (tokens; it @imports this file)
+   Then in your HTML <head>:
+     <link rel="stylesheet" href="colors_and_type.css">
+   (colors_and_type.css pulls in fonts.css automatically.)
+
+   The @font-face src paths below are relative to THIS file's location,
+   so keep fonts.css and the fonts/ folder in the same directory.
+
+   Families:
+     · Boldonse          — heavy blocky display, single weight (400). SHORT
+                            headings only; never body copy; never faux-900.
+     · Google Sans Flex  — variable (weight 1–1000) for H3 / nav / CTA /
+                            body / UI.
+   Only the latin subset is bundled. If you need extended glyphs, fall back
+   to the Google Fonts CDN (see README » Using these fonts).
+   ========================================================================= */
+
+/* Boldonse — latin */
+@font-face {
+  font-family: 'Boldonse';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/boldonse-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Google Sans Flex — latin (variable 1–1000) */
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 1 1000;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('./fonts/google-sans-flex-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

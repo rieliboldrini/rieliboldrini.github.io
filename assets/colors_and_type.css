@@ -1,0 +1,206 @@
+/* =========================================================================
+   RIELI DESIGN SYSTEM — colors_and_type.css
+   Warm · editorial · minimalist. Terracotta/amber palette, heavy blocky display
+   type, pill components with glassmorphism.
+   Source: https://rie.li  (Framer)
+
+   FONTS (chosen direction):
+     · --font-display  =  Boldonse          (heavy blocky display; SHORT
+                                              headings only — single weight,
+                                              wide; never set on body copy)
+     · --font-heading  =  Google Sans Flex   (H3 / nav / CTA / labels)
+     · --font-body     =  Google Sans Flex   (body copy, descriptions)
+     · --font-ui       =  Google Sans Flex   (captions, utility)
+   Boldonse ships ONE weight — do not request 900 (faux-bold distorts it);
+   it already reads as black. It runs wide, so display sizes are tuned
+   smaller and with near-zero tracking vs. a normal sans.
+   ========================================================================= */
+
+/* Local, offline-safe webfonts (Boldonse + Google Sans Flex).
+   Resolved relative to THIS file — keep fonts.css + fonts/ as siblings.
+   CDN fallback (extended glyphs / no local files): replace the line below with
+   @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap'); */
+@import url('fonts.css');
+
+:root {
+  /* ---------- BRAND COLORS ---------- */
+  --color-brown:        #3D2710;   /* primary text, headings, logo */
+  --color-amber:        #D48824;   /* hero bg, CTA, accent */
+  --color-cream:        #F5EED6;   /* page bg, text-on-dark */
+  --color-cream-light:  #FAF9F5;   /* secondary surface */
+  --color-gray-light:   #F7F7F7;   /* disabled card */
+  --color-gray-medium:  #545454;   /* secondary text */
+  --color-white:        #FFFFFF;
+  --color-near-black:   #141413;   /* ui utility */
+
+  /* warm amber used in glow shadows */
+  --color-amber-glow:   #D97757;
+
+  /* ---------- GLASS / OVERLAY ---------- */
+  --glass-white-20:  rgba(255, 255, 255, 0.20);  /* navbar fill */
+  --glass-white-48:  rgba(255, 255, 255, 0.48);
+  --glass-white-40:  rgba(255, 255, 255, 0.40);
+  --glass-white-05:  rgba(255, 255, 255, 0.05);
+  --glass-dark-80:   rgba(34, 34, 34, 0.80);     /* card overlay, badge */
+  --glass-border:    rgba(255, 255, 255, 0.24);  /* glass outline */
+  --border-subtle:   rgba(31, 30, 29, 0.40);     /* dividers */
+
+  /* ---------- SEMANTIC ---------- */
+  --text-primary:     var(--color-brown);
+  --text-secondary:   var(--color-gray-medium);
+  --text-inverted:    var(--color-cream);
+  --bg-primary:       var(--color-cream);
+  --bg-hero:          var(--color-amber);
+  --bg-surface:       var(--color-cream-light);
+  --bg-disabled:      var(--color-gray-light);
+  --accent:           var(--color-amber);
+  --link:             #0000EE;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Boldonse', system-ui, sans-serif;            /* SHORT headings only */
+  --font-heading: 'Google Sans Flex', system-ui, sans-serif;   /* H3 / nav / CTA / labels */
+  --font-body:    'Google Sans Flex', system-ui, sans-serif;   /* body copy */
+  --font-ui:      'Google Sans Flex', system-ui, sans-serif;   /* utility / captions */
+
+  /* ---------- TYPE SCALE ---------- */
+  /* Boldonse runs wide & heavy — display sizes tuned down from the original
+     scale so headlines occupy similar space and stay legible. */
+  --font-size-h1:     46px;
+  --font-size-h2:     33px;
+  --font-size-h3:     22px;
+  --font-size-body:   18px;
+  --font-size-label:  12px;
+  --font-size-caption: 12px;
+
+  --lh-h1:   48px;
+  --lh-h2:   36px;
+  --lh-h3:   30px;
+  --lh-body: 26px;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  /* ---------- SPACING ---------- */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 10px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-7: 28px;  --space-8: 32px;
+  --space-10: 40px; --space-12: 50px; --space-18: 72px; --space-20: 80px;
+
+  /* ---------- RADII ---------- */
+  --radius-none:  0px;
+  --radius-sm:    8px;    /* chips, small tags */
+  --radius-md:    12px;   /* mobile inner cards */
+  --radius-lg:    15px;   /* image containers */
+  --radius-xl:    30px;   /* image wrappers, medium cards */
+  --radius-2xl:   50px;   /* project cards, CTA, navbar */
+  --radius-3xl:   64px;   /* nav-link hover area */
+  --radius-circle: 50%;
+  --radius-pill:  50px;
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-sm: rgba(0,0,0,0.25) 0px 1px 2px 0px;
+  --shadow-md: rgba(0,0,0,0.1) 0px 2px 4px 0px, rgba(0,0,0,0.05) 0px 1px 0px 0px, rgba(255,255,255,0.15) 0px 0px 0px 1px;
+  --shadow-glow-inset: rgba(217,119,87,0.69) 0px 0px 14.72px 0px inset, rgba(217,119,87,0.49) 0px 0px 24.72px 0px inset, rgba(217,119,87,0.196) 0px 0px 34.72px 0px inset;
+  --shadow-glow-card: rgba(217,119,87,0.24) 0px 40px 80px 0px, rgba(217,119,87,0.24) 0px 4px 14px 0px;
+
+  /* ---------- BORDERS ---------- */
+  --border-thin:  0.5px solid var(--border-subtle);
+  --border-glass: 1px solid var(--glass-border);
+
+  /* ---------- EFFECTS ---------- */
+  --blur-glass: blur(30px);
+
+  /* ---------- LAYOUT ---------- */
+  --nav-height: 86px;
+  --content-max-width: 970px;
+  --content-pad-x: 80px;
+}
+
+/* =========================================================================
+   SEMANTIC TYPOGRAPHY CLASSES
+   ========================================================================= */
+.ds-h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h1);
+  line-height: var(--lh-h1);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+}
+.ds-h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h2);
+  line-height: var(--lh-h2);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+}
+.ds-h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+.ds-body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+}
+.ds-label {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-label);
+  font-weight: var(--fw-medium);
+  line-height: normal;
+  color: var(--color-white);
+}
+.ds-caption {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-caption);
+  font-weight: var(--fw-regular);
+  color: var(--text-secondary);
+}
+
+/* =========================================================================
+   PRIMITIVES
+   ========================================================================= */
+.ds-cta {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--fw-bold);
+  background: var(--bg-hero);
+  color: var(--text-inverted);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+.ds-cta:hover  { filter: brightness(1.06); }
+.ds-cta:active { transform: scale(0.97); }
+
+.ds-tag {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-label);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-pill);
+  padding: 4px 8px;
+  background: var(--glass-dark-80);
+  color: var(--color-white);
+  display: inline-flex;
+}
+
+.ds-glass {
+  background: var(--glass-white-20);
+  backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
+  border: var(--border-glass);
+  box-shadow: var(--shadow-sm);
+}
